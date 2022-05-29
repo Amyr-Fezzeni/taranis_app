@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "508411536090",
+    "project_id": "taranis-ca463",
+    "storage_bucket": "taranis-ca463.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:508411536090:android:0260d91d2818aa7c91fbe3",
+        "android_client_info": {
+          "package_name": "com.example.taranis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "508411536090-rd9rtc2dv1cpff9822l8iqlea5nesn70.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmoUpDDt2EC0wd_gqnBJqyCA5gsrfHyOQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "508411536090-rd9rtc2dv1cpff9822l8iqlea5nesn70.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
