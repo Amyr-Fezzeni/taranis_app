@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:provider/provider.dart';
 import 'package:taranis/constants/data.dart';
 import 'package:taranis/constants/style.dart';
@@ -35,7 +36,9 @@ class _LoginState extends State<Login> {
     super.initState();
     Future.delayed(const Duration(microseconds: 100)).then((value) => 
     context.read<MenuProvider>().updateCurrentPage(0)
+
     );
+    FlutterNativeSplash.remove();
     
   }
 

@@ -57,6 +57,12 @@ flutter_icons:
   image_path: "assets/icons/logo.png"
 
 flutter_native_splash:
+
+  image: assets/icons/logo.png
   color: "#ffffff"
-  image: "assets/icons/logo.png"
+  android_gravity: center
   android: true
+  android_12:
+    image: assets/icons/logo.png
+    android_gravity: center
+

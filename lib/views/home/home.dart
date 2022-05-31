@@ -8,10 +8,10 @@ import 'package:taranis/widgets/awesome_drawer_bar.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
-  static List<MenuItem> mainMenu = const [
-    MenuItem("news", Icons.newspaper_rounded, 0),
-    MenuItem("search", Icons.search, 1),
-    MenuItem("profile", Icons.person, 2),
+  static List<MenuItemModel> mainMenu = const [
+    MenuItemModel("News", Icons.newspaper_rounded, 0),
+    MenuItemModel("Search", Icons.search, 1),
+    MenuItemModel("Profile", Icons.person, 2),
   ];
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -20,7 +20,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final _drawerController = AwesomeDrawerBarController();
   final int _currentPage = 0;
-
 
   @override
   Widget build(BuildContext context) {

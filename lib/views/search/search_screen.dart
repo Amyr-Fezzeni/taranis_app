@@ -17,12 +17,26 @@ class SearchScreen extends StatefulWidget {
 
 class _SearchScreenState extends State<SearchScreen> {
   final controller = ScrollController();
+  bool isDown = false;
   @override
   void initState() {
     super.initState();
     Future.delayed(const Duration(milliseconds: 50))
         .then((value) => context.read<DataProvider>().filterCategory(0));
     controller.addListener(() {
+      if (controller.offset > 100) {
+        if (isDown == false) {
+          setState(() {
+            isDown = true;
+          });
+        }
+      } else {
+        if (isDown == true) {
+          setState(() {
+            isDown = false;
+          });
+        }
+      }
       if (controller.position.maxScrollExtent == controller.offset) {
         if (!context.read<DataProvider>().isOffset) {
           context.read<DataProvider>().loadMoreCategory();
@@ -32,7 +46,9 @@ class _SearchScreenState extends State<SearchScreen> {
   }
 
   Future<void> _refrech() async {
-    context.read<DataProvider>().loadMoreCategory();
+    context
+        .read<DataProvider>()
+        .filterCategory(context.read<DataProvider>().currestCategoryKey);
     return;
   }
 
@@ -42,6 +58,19 @@ class _SearchScreenState extends State<SearchScreen> {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: bgColor,
+      floatingActionButton: isDown
+          ? FloatingActionButton(
+              onPressed: () => controller.animateTo(0,
+                  duration: const Duration(milliseconds: 500),
+                  curve: Curves.easeInOut),
+              backgroundColor: secondColor,
+              child: const Icon(
+                Icons.keyboard_arrow_up_rounded,
+                color: Colors.white,
+                size: 20,
+              ),
+            )
+          : null,
       body: RefreshIndicator(
         onRefresh: _refrech,
         child: SingleChildScrollView(

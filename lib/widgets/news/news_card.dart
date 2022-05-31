@@ -12,7 +12,8 @@ class NewsCard extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return Card(
       child: InkWell(
-        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => NewsDetails(data: data))),
+        onTap: () => Navigator.push(context,
+            MaterialPageRoute(builder: (_) => NewsDetails(data: data))),
         child: SizedBox(
             width: double.infinity,
             child: Padding(
@@ -40,7 +41,8 @@ class NewsCard extends StatelessWidget {
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyText1
-                                  ?.copyWith(color: Colors.black54, fontSize: 15),
+                                  ?.copyWith(
+                                      color: Colors.black54, fontSize: 15),
                             )),
                         SizedBox(
                             child: Text(
@@ -64,7 +66,7 @@ class NewsCard extends StatelessWidget {
                             ?.copyWith(color: Colors.black54, fontSize: 20),
                       ),
                       SizedBox(
-                          width: size.width * 0.8,
+                          width: size.width * 0.75,
                           child: Wrap(
                             children: data.tags
                                 .map((tag) => Container(
@@ -73,7 +75,8 @@ class NewsCard extends StatelessWidget {
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 10, vertical: 5),
                                       decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(15),
+                                          borderRadius:
+                                              BorderRadius.circular(15),
                                           color: secondColor.withOpacity(0.9)),
                                       child: Text(
                                         tag,

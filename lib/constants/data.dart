@@ -25,5 +25,6 @@ List<Category> categories = [
   Category(title: "microsoft", link: ""),
   Category(title: "nasa", link: ""),
   Category(title: "pirate", link: ""),
+  Category(title: "virus", link: "")
 
 ];

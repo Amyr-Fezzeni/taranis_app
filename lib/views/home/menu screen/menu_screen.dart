@@ -6,7 +6,7 @@ import 'package:taranis/providers/user_provider.dart';
 import 'package:taranis/widgets/menu_item.dart';
 
 class MenuScreen extends StatefulWidget {
-  final List<MenuItem> mainMenu;
+  final List<MenuItemModel> mainMenu;
   final Function(int) callback;
   final int current;
 
@@ -100,19 +100,23 @@ class _MenuScreenState extends State<MenuScreen> {
               const Spacer(),
               Padding(
                 padding: const EdgeInsets.only(left: 24.0, right: 24.0),
-                child: OutlineButton(
-                  child: const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text(
-                      "logout",
-                      style: TextStyle(fontSize: 18),
-                    ),
+                child: InkWell(
+                  onTap: () => context.read<UserProvider>().logOut(context),
+                  child: Container(
+                    width: 140,
+                    padding: const EdgeInsets.all(8.0),
+                    decoration: BoxDecoration(
+                        border: Border.all(width: 2, color: Colors.white),
+                        borderRadius: BorderRadius.circular(16.0)),
+                    child: Center(
+                        child: Text(
+                      "Logout",
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyText1
+                          ?.copyWith(color: Colors.white, fontSize: 18),
+                    )),
                   ),
-                  borderSide: const BorderSide(color: Colors.white, width: 2.0),
-                  onPressed: () => context.read<UserProvider>().logOut(context),
-                  textColor: Colors.white,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16.0)),
                 ),
               ),
               const Spacer(),

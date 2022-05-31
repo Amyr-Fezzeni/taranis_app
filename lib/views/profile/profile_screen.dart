@@ -44,7 +44,7 @@ class Profile extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "Username :",
+                        "Name :",
                         style: Theme.of(context).textTheme.bodyText1,
                       ),
                       Text(
@@ -71,6 +71,28 @@ class Profile extends StatelessWidget {
                       ),
                       Text(
                         user.email,
+                        style: Theme.of(context).textTheme.bodyText1,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Card(
+                color: bgColor,
+                elevation: 3,
+                child: Container(
+                  height: 50,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Phone number :",
+                        style: Theme.of(context).textTheme.bodyText1,
+                      ),
+                      Text(
+                        user.phoneNumber.toString(),
                         style: Theme.of(context).textTheme.bodyText1,
                       ),
                     ],
@@ -138,7 +160,7 @@ class Profile extends StatelessWidget {
                 height: 20,
               ),
               Card(
-                color: bgColor,
+                color: primaryColor,
                 elevation: 3,
                 child: Container(
                   height: 50,
@@ -152,7 +174,10 @@ class Profile extends StatelessWidget {
                               context.read<UserProvider>().logOut(context),
                           child: Text(
                             "Disconnect",
-                            style: Theme.of(context).textTheme.bodyText1,
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyText1
+                                ?.copyWith(color: Colors.white, fontSize: 20),
                           )),
                     ],
                   ),

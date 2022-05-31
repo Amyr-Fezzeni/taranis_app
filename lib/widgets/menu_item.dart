@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:taranis/models/menu_item.dart';
 
 class MenuItemWidget extends StatelessWidget {
-  final MenuItem item;
+  final MenuItemModel item;
   final Widget widthBox;
   final TextStyle style;
   final Function callback;

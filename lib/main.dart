@@ -29,19 +29,8 @@ void main() async {
   );
 }
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  @override
-  void initState() {
-    super.initState();
-    FlutterNativeSplash.remove();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +38,6 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       title: 'Taranis',
       theme: ThemeData(
-        // backgroundColor: bgColor,
         primarySwatch: primaryMaterialColor,
       ),
       home: const Login(),

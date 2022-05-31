@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 
-class MenuItem {
+class MenuItemModel {
   final String title;
   final IconData icon;
   final int index;
 
-  const MenuItem(this.title, this.icon, this.index);
+  const MenuItemModel(this.title, this.icon, this.index);
 }

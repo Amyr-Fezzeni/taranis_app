@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "508411536090",
-    "project_id": "taranis-ca463",
-    "storage_bucket": "taranis-ca463.appspot.com"
+    "project_number": "584970394197",
+    "project_id": "taranis-2af98",
+    "storage_bucket": "taranis-2af98.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:508411536090:android:0260d91d2818aa7c91fbe3",
+        "mobilesdk_app_id": "1:584970394197:android:24e334cf4b00550dd4d2dc",
         "android_client_info": {
           "package_name": "com.example.taranis"
         }
       },
       "oauth_client": [
         {
-          "client_id": "508411536090-rd9rtc2dv1cpff9822l8iqlea5nesn70.apps.googleusercontent.com",
+          "client_id": "584970394197-b4nfm84r3potvm0eqdflcbrlf42s6315.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDmoUpDDt2EC0wd_gqnBJqyCA5gsrfHyOQ"
+          "current_key": "AIzaSyD6VBsMidXOB3hkHUnKYbMKPuBlQq4CGXk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "508411536090-rd9rtc2dv1cpff9822l8iqlea5nesn70.apps.googleusercontent.com",
+              "client_id": "584970394197-b4nfm84r3potvm0eqdflcbrlf42s6315.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
