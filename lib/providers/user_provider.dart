@@ -116,4 +116,40 @@ class UserProvider with ChangeNotifier {
       Navigator.pop(context);
     }
   }
+
+  Future<void> validatorPhone(BuildContext context, String phone) async {
+    if (phone.isEmpty) {
+      await PopUp.showMyDialogAlert(context, "Phone number empty!", "Ok");
+      return;
+    }
+    if (phone.length != 8) {
+      await PopUp.showMyDialogAlert(context, "Phone number invalid!", "Ok");
+      return;
+    }
+    if (phone == currentUser?.phoneNumber.toString()) {
+      await PopUp.showMyDialogAlert(
+          context, "You can't update the same phone number!", "Ok");
+      return;
+    }
+    if (await UserService.checkExistingUser(int.parse(phone))) {
+      await PopUp.showMyDialogAlert(
+          context, "Phone number already existe!", "Ok");
+      return;
+    }
+    currentUser?.phoneNumber = int.parse(phone);
+    bool result = await UserService.changePhoneNumber(currentUser!);
+
+    if (result) {
+      await PopUp.showMyDialogAlert(
+          context, "Phone number changed seccesfully.", "Ok");
+      User? user = await UserService.getUser(currentUser!.phoneNumber);
+      if (user != null) setUser(user);
+      notifyListeners();
+    } else {
+      await PopUp.showMyDialogAlert(
+          context, "Connection error, please try again later", "Ok");
+    }
+
+    Navigator.pop(context);
+  }
 }

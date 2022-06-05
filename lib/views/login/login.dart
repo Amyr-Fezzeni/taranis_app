@@ -97,6 +97,7 @@ class _LoginState extends State<Login> {
                     },
                     keyboardType: TextInputType.number,
                     inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                    maxLength: 8,
                     decoration: InputDecoration(
                         focusColor: primaryColor,
                         contentPadding: const EdgeInsets.symmetric(
@@ -105,6 +106,7 @@ class _LoginState extends State<Login> {
                             .textTheme
                             .bodyText1
                             ?.copyWith(fontSize: 20, color: Colors.grey),
+                        
                         focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
                             borderSide: const BorderSide(

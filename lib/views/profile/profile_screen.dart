@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:taranis/constants/style.dart';
 import 'package:taranis/providers/user_provider.dart';
 import 'package:taranis/views/profile/change_password.dart';
+import 'package:taranis/views/profile/change_phone_number.dart';
 
 class Profile extends StatelessWidget {
   const Profile({Key? key}) : super(key: key);
@@ -91,10 +92,26 @@ class Profile extends StatelessWidget {
                         "Phone number :",
                         style: Theme.of(context).textTheme.bodyText1,
                       ),
-                      Text(
-                        user.phoneNumber.toString(),
-                        style: Theme.of(context).textTheme.bodyText1,
-                      ),
+                      TextButton(
+                          onPressed: () async {
+                            await showModalBottomSheet(
+                                isScrollControlled: true,
+                                backgroundColor: Colors.transparent,
+                                context: context,
+                                builder: (context) =>
+                                    const ChangePhoneNumber());
+                          },
+                          child: Text(
+                            context
+                                .watch<UserProvider>()
+                                .currentUser!
+                                .phoneNumber
+                                .toString(),
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyText1
+                                ?.copyWith(color: primaryColor),
+                          )),
                     ],
                   ),
                 ),

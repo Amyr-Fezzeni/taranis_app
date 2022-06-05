@@ -54,6 +54,18 @@ class UserService {
     }
   }
 
+   static Future<bool> changePhoneNumber(User user) async {
+    try {
+      await FirebaseFirestore.instance
+          .collection("users")
+          .doc(user.id)
+          .update({"phoneNumber": user.phoneNumber});
+      return true;
+    } on Exception{
+      return false;
+    }
+  }
+
   static String generateId() {
     ObjectId id1 = ObjectId();
     return id1.toHexString();

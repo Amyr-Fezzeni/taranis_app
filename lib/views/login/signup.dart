@@ -162,6 +162,7 @@ class _SignUpState extends State<SignUp> {
                       },
                       keyboardType: TextInputType.number,
                       inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                      maxLength: 8,
                       decoration: InputDecoration(
                           focusColor: primaryColor,
                           contentPadding: const EdgeInsets.symmetric(
